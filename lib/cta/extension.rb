@@ -35,7 +35,11 @@ module CTA
       def cta(id, options={})
         result = cta_controller.find_cta(id)
 
-        image_tag(File.join(cta_controller.options.cta_directory, result.image), options)
+        options[:class] ||= 'cta-image'
+
+        link_to result.url, class: 'cta-link' do
+          image_tag(File.join(cta_controller.options.cta_directory, result.image), options)
+        end
       end
     end
   end
