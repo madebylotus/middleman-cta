@@ -9,6 +9,11 @@ module CTA
 
     def after_configuration
        app.logger.info("== CTA: #{ options.cta_data } is not a valid data key") unless app.data.key?(options.cta_data)
+
+       if app.config[:markdown_engine] == :redcarpet
+         require 'middleman-core/renderers/redcarpet'
+         Middleman::Renderers::MiddlemanRedcarpetHTML.send(:include, CTA::Redcarpet::CTARenderer)
+       end
     end
 
     def cta_datasource
