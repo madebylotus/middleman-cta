@@ -36,3 +36,23 @@ activate :cta do |cta|
   cta.cta_data = 'call_to_actions'
 end
 ```
+
+## Rendering
+
+We support two template engines by default, ERB and Markdown.  For Markdown support, we currently only support Redcarpet as the markdown engine.
+
+
+### ERB
+You have access to a helper method to use in ERB:
+
+```ruby
+<h2>Signup Now</h2>
+<%= cta('unique-cta-id') %>
+```
+
+### Markdown
+
+```markdown
+## Signup Now
+[cta:unique-cta-id]
+```
