@@ -7,5 +7,12 @@ module CTA
         self.public_send("#{ key }=", value)
       end
     end
+
+    def url_for(sitemap)
+      uri = URI(url)
+      return url if uri.absolute?
+
+      sitemap.find_resource_by_path(url)
+    end
   end
 end
