@@ -37,7 +37,7 @@ module CTA
 
         options[:class] ||= 'cta-image'
 
-        link_to result.url, class: 'cta-link' do
+        link_to result.url_for(sitemap), class: 'cta-link' do
           image_tag(File.join(cta_controller.options.cta_directory, result.image), options)
         end
       end

@@ -27,6 +27,18 @@ In your `data/cta.yml` (or JSON):
   url: "http://absolute.url"
 ```
 
+If you prefer, you can link using a sitemap descriptor instead - meaning any item defined in your middelman site.
+
+```json
+[
+  {
+    "id": "great-cta",
+    "image": "name-of-file-in-cta-image-dir.jpg",
+    "url": "/my/great/page/index.html"
+  }
+]
+```
+
 ## Configuration
 You can configure the name of the data file, as well as the directory in which the images are stored.
 
